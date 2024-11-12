@@ -1,0 +1,42 @@
+header {
+    background-color: whitesmoke;
+    padding: 0;
+    border-bottom: 2px solid rgb(255, 131, 0);
+}
+a{
+    color: rgb(255, 134, 4);
+}
+a:hover {
+    background-color: rgb(241, 213, 148);
+    border-radius: 10px;
+}
+a.logo {
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 1em;
+    color: rgb(255, 134, 4);
+    text-decoration: none;
+}
+
+.container {
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    
+}
+
+nav ul li a {
+    padding: 1em;
+    display: inline-block;
+    font-size: 1.2rem; 
+    font-weight: bold;
+    color: rgb(255, 134, 4);
+    text-decoration: none;
+}
+
+
+

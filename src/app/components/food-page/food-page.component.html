@@ -1,0 +1,13 @@
+@for (food of var_food; track $index) {
+<div class="food-page">
+    <h1>{{ food.name }}</h1>
+    <ngx-star-rating
+        [rating]="food.stars"
+        [totalstars]="5"
+        checkedcolor="gold"
+        uncheckedcolor="grey"
+        size="24px"
+        [readonly]="true">
+    </ngx-star-rating>
+</div>
+}
