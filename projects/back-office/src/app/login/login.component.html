@@ -1,1 +1,27 @@
-<p>login works!</p>
+<h1 class="text-center mt-4">LOG IN</h1><br>
+<form [formGroup]="subForm" ngSubmit="onSubmit()" ngReset="onResetF()">
+    <div class="mb-3">
+        <label for="formGroupExampleInput" class="form-label">Identifiant</label>
+        <input type="text" name="admin" formControlName="admin" class="form-control" id="formGroupExampleInput">
+    </div>
+    @if(isOblig('admin') && admin?.dirty){
+        <div class="alert alert-danger">
+            L'identifiant est invalide!
+        </div>
+    }
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Mot de passe</label>
+        <input type="password" name="mdp" formControlName="mdp" class="form-control" id="exampleInputPassword1">
+    </div>
+    @if(isOblig('mdp') && mdp?.dirty){
+        <div class="alert alert-danger">
+            Le mot de passe est requis!
+        </div>
+    }
+    <div class="text-center mt-3">
+        <input type="submit" class="btn btn-success" value="Confirmer" [disabled]="subForm.invalid">&nbsp;
+    <input type="button" class="btn btn-warning" value="Effacer">
+    </div>
+    
+   
+</form>
