@@ -1,13 +1,12 @@
 import { Component,CUSTOM_ELEMENTS_SCHEMA, OnInit } from '@angular/core';
 import { FoodService } from '../../services/food.service';
 import { Food } from '../../models/Food';
-import { NgxStarRatingModule } from "ngx-star-rating";
 import { CurrencyPipe } from '@angular/common';
 import { ActivatedRoute,RouterLink } from '@angular/router';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [NgxStarRatingModule, CurrencyPipe,RouterLink],
+  imports: [CurrencyPipe,RouterLink],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
