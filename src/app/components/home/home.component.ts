@@ -1,7 +1,6 @@
 import { Component,CUSTOM_ELEMENTS_SCHEMA, inject, OnInit } from '@angular/core';
 import { FoodService } from '../../services/food.service';
 import { Food } from '../../models/Food';
-import { NgxStarRatingModule } from "ngx-star-rating";
 import { CurrencyPipe } from '@angular/common';
 import { ActivatedRoute,RouterLink } from '@angular/router';
 import { SearchComponent } from '../../search/search.component';
@@ -10,7 +9,11 @@ import { NgIf } from '@angular/common';
 @Component({
   selector: 'app-home',
   standalone: true,
+<<<<<<< HEAD
   imports: [NgxStarRatingModule, CurrencyPipe,RouterLink,SearchComponent,NgIf],
+=======
+  imports: [CurrencyPipe,RouterLink],
+>>>>>>> 2496595adbabdc88189dd5b1765cf8c182548a32
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
