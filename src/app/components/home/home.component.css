@@ -35,10 +35,6 @@ li a:hover{
 .fav.not{
     color: gray;
 }
-.stars{
-    position: absolute;
-    bottom: -3rem;
-}
 .product-item-footer{
     display: flex;
     justify-content: space-between;
@@ -51,11 +47,6 @@ font-size: .8rem;
 color: gray;
 margin-right: .3rem;
 }
-ngx-star-rating {
-    display: inline-block; 
-    vertical-align: middle;
-}
-
 .cook-time{
     font-size: .8rem;
     flex:3;

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input,OnInit ,inject} from '@angular/core';
 import { Tag } from '../../models/Tag';
 import { FoodService } from '../../services/food.service';
 import { RouterLink } from '@angular/router';
@@ -10,10 +10,18 @@ import { RouterLink } from '@angular/router';
   styleUrl: './tags.component.css'
 })
 export class TagsComponent implements OnInit{
-  tags:Tag[]=[];
-  constructor(private foodService:FoodService){}
-  ngOnInit(): void {
-    this.tags=this.foodService.getAllTags();
-  }
+  @Input()
+  foodPageTags?:string[];
+  tags?:Tag[];
 
+  private readonly foodService:FoodService=inject(FoodService);
+  ngOnInit(): void {
+    if(!this.foodPageTags)
+      this.foodService.getTags().subscribe(data => {
+        console.log(data); // Vérifiez les données
+        this.tags = data;
+      });
+      
+
+}
 }

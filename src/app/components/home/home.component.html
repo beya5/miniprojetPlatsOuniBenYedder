@@ -1,8 +1,11 @@
-<app-tags></app-tags>
+
+<app-search></app-search>
+<app-tags [foodPageTags]="tags"></app-tags>
+
 <ul>
     @for (im of foods; track $index) {
         <li>
-            <a [routerLink]="'/food/{{im.id}}'">
+            <a [routerLink]="['/food',im.id]">
                 <img [src]="im.imageUrl" alt="">
                 <div class="content">
                     <div class="name">
@@ -11,16 +14,6 @@
                     <span class="fav {{im.favorite?'':'not'}}">
                         ❤️
                     </span>
-                    <div class="stars">
-                        <ngx-star-rating
-                        [rating]="im.stars"
-                        [totalstars]="5"
-                        checkedcolor="red"
-                        uncheckedcolor="black"
-                        size="18px"
-                        [readonly]="true">
-                    </ngx-star-rating>
-                    </div>
                     <div class="product-item-footer">
                         <div class="origins">
                             @for (origin of im.origins; track $index) {
