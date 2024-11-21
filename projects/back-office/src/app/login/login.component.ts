@@ -35,15 +35,17 @@ export class LoginComponent implements OnInit {
   onResetF(){
     this.subForm.reset();
   }
-  onSubmit(){
-    if(this.subForm.valid){
-      const adm=this.admin?.value;
-      const mdp=this.mdp?.value;
-      if(adm === this.donnees.admin && mdp == this.donnees.mdp){
-        this.router.navigate(['/']);
-      }else{
+  onSubmit() {
+    if (this.subForm.valid) {
+      const adm = this.admin?.value;
+      const mdp = this.mdp?.value;
+      if (adm === this.donnees.admin && mdp == this.donnees.mdp) {
+        // Rediriger vers la page admin après une connexion réussie
+        this.router.navigate(['/admin']);
+      } else {
         alert('Identifiant ou mot de passe invalide');
       }
     }
   }
+  
 }

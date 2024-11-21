@@ -9,11 +9,8 @@ import { NgIf } from '@angular/common';
 @Component({
   selector: 'app-home',
   standalone: true,
-<<<<<<< HEAD
-  imports: [NgxStarRatingModule, CurrencyPipe,RouterLink,SearchComponent,NgIf],
-=======
-  imports: [CurrencyPipe,RouterLink],
->>>>>>> 2496595adbabdc88189dd5b1765cf8c182548a32
+  imports: [ CurrencyPipe,RouterLink,SearchComponent,NgIf],
+
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
