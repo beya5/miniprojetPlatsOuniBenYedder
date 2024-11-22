@@ -1,9 +1,9 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { FoodService } from '../../../../src/app/services/food.service';
-import { Food } from '../../../../src/app/models/Food';
 import { NgIf } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Food } from '../../../../src/app/models/Food';
+import { FoodService } from '../../../../src/app/services/food.service';
 
 @Component({
   selector: 'app-admin',

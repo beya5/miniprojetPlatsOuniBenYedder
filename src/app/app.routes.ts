@@ -2,7 +2,7 @@ import { Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { FoodpageComponent } from './foodpage/foodpage.component';
 import { LoginComponent } from '../../projects/back-office/src/app/login/login.component';
- import { AdminComponent } from '../../projects/back-office/src/admin/admin.component';
+import { AdminComponent } from '../../projects/back-office/src/admin/admin.component';
 
 export const routes: Routes = [
     //front-office routes
