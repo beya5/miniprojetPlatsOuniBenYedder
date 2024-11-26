@@ -3,6 +3,7 @@ import { HomeComponent } from './components/home/home.component';
 import { FoodpageComponent } from './foodpage/foodpage.component';
 import { LoginComponent } from '../../projects/back-office/src/app/login/login.component';
 import { AdminComponent } from '../../projects/back-office/src/app/admin/admin.component';
+import { InfoComponent } from './info/info.component';
 
 export const routes: Routes = [
     //front-office routes
@@ -14,6 +15,7 @@ export const routes: Routes = [
     {path:'food/:id',component:FoodpageComponent},
     { path: '', redirectTo: 'home', pathMatch: 'full' },
     {path:'food/:id',component:FoodpageComponent},
+    { path: 'info-page',title:'Infos', component: InfoComponent },
     //back-office routes
     {path:'back-office/',redirectTo:'back-office/login',pathMatch:'full'},
     {path:'back-office/login',title:'Authentification',component:LoginComponent},
