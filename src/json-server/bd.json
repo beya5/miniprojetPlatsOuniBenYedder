@@ -3,7 +3,7 @@
     {
       "id": "1",
       "name": "Tortilla",
-      "price": 5.99,
+      "price": 6.99,
       "cooktime": "10-15",
       "favorite": false,
       "origins": [
@@ -122,7 +122,7 @@
     {
       "id": "9",
       "name": "Soup",
-      "price": 13,
+      "price": 12,
       "cooktime": "30-35",
       "favorite": true,
       "origins": [

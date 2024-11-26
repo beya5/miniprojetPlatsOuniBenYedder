@@ -30,15 +30,15 @@
     <form (ngSubmit)="updateFood()">
       <label>
         Name:
-        <input [(ngModel)]="selectedFood.name" name="name" required />
+        <input [(ngModel)]="selectedFood.name" name="name"  />
       </label>
       <label>
         Price:
-        <input type="number" [(ngModel)]="selectedFood.price" name="price" required />
+        <input type="number" [(ngModel)]="selectedFood.price" name="price"/>
       </label>
       <label>
         Cook Time:
-        <input [(ngModel)]="selectedFood.cooktime" name="cooktime" required />
+        <input [(ngModel)]="selectedFood.cooktime" name="cooktime"  />
       </label>
       <button type="submit">Save</button>
       <button type="button" (click)="cancelEdit()">Cancel</button>

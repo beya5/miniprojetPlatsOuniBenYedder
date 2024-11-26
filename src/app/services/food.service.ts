@@ -14,9 +14,17 @@ export class FoodService {
   constructor() { }
   getFoodById(id: number): Observable<Food> {
     return this.getAll().pipe(
-      map(data => data.find(food => food.id == id)!)
+      map(data => {
+        console.log('Données reçues dans getFoodById:', data);
+        const food = data.find(food => food.id == id);
+        if (!food) {
+          throw new Error(`Food with id ${id} not found`);
+        }
+        return food;
+      })
     );
   }
+  
   
 
   public getAll(): Observable<Food[]> {
@@ -43,7 +51,6 @@ export class FoodService {
   public updateFood(food: Food): Observable<Food> {
     return this.http.put<Food>(`${API_f}/${food.id}`, food);
   }
-
   public deleteFood(id: number): Observable<void> {
     return this.http.delete<void>(`${API_f}/${id}`);
   }
