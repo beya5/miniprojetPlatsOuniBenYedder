@@ -1,14 +1,29 @@
-@for (item of food; track $index) 
+<ul>
+  @for (item of food; track $index) 
 {
+  <li>
     <div>
-    <img [src]="item.imageUrl" alt="{{ item.name }}" />
-    <h3>{{ item.name }}</h3>
-    <p>Price: {{ item.price }}$</p>
-    <p>Cook Time: {{ item.cooktime }}</p>
-    <button (click)="editFood(item)">Edit</button>
-    <button (click)="deleteFood(item.id)">Delete</button>
-  </div>
+      <img [src]="item.imageUrl" alt="{{ item.name }}" />
+      <div class="content">
+        <h3>{{ item.name }}</h3>
+        <div class="product-item-footer">
+          <div class="cook-time">
+            <i class="bi bi-alarm"></i>{{ item.cooktime | cooktime}}
+          </div>
+        </div>
+        <div class="price">
+        Price: {{ item.price }}$
+        </div>
+        <button (click)="editFood(item)" class="btn btn-success">Edit</button> &nbsp;
+        <button (click)="deleteFood(item.id)" class="btn btn-danger">Delete</button>
+      </div>
+      </div>
+      
+  </li>
+    
 } 
+</ul>
+
   <!-- Formulaire pour modifier un plat -->
   <div *ngIf="selectedFood" class="edit-form">
     <h3>Edit {{ selectedFood.name }}</h3>

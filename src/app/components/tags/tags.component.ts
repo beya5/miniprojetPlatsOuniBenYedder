@@ -18,7 +18,7 @@ export class TagsComponent implements OnInit{
   ngOnInit(): void {
     if(!this.foodPageTags)
       this.foodService.getTags().subscribe(data => {
-        console.log(data); // Vérifiez les données
+        console.log('Tags récupérés:',data);
         this.tags = data;
       });
       

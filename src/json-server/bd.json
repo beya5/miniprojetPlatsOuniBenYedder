@@ -1,120 +1,170 @@
 {
-    "food": [
+  "food": [
     {
-        "id": 1,
-        "name": "Tortilla",
-        "price": 5.99,
-        "cooktime": "10-15",
-        "favorite": false,
-        "origins": ["Mexico"],
-      
-        "imageUrl": "images/food22.jpg",
-        "tags": ["FastFood", "Tortilla", "Lunch"]
+      "id": "1",
+      "name": "Tortilla",
+      "price": 5.99,
+      "cooktime": "10-15",
+      "favorite": false,
+      "origins": [
+        "Mexico"
+      ],
+      "imageUrl": "images/food22.jpg",
+      "tags": [
+        "FastFood",
+        "Tortilla",
+        "Lunch"
+      ]
     },
     {
-        "id": 2,
-        "name": "Fried Chicken",
-        "price": 12.8,
-        "cooktime": "20-30",
-        "favorite": true,
-        "origins": ["Italy"],
-     
-        "imageUrl": "images/food23.jpg",
-        "tags": ["FastFood", "Dinner"]
+      "id": "2",
+      "name": "Fried Chicken",
+      "price": 12.8,
+      "cooktime": "20-30",
+      "favorite": true,
+      "origins": [
+        "Italy"
+      ],
+      "imageUrl": "images/food23.jpg",
+      "tags": [
+        "FastFood",
+        "Dinner"
+      ]
     },
     {
-        "id": 3,
-        "name": "Salad",
-        "price": 8.2,
-        "cooktime": "20-25",
-        "favorite": false,
-        "origins": ["Greece"],
-
-        "imageUrl": "images/food24.jpeg",
-        "tags": ["Salad", "Dinner", "Lunch"]
+      "id": "3",
+      "name": "Salad",
+      "price": 8.2,
+      "cooktime": "20-25",
+      "favorite": false,
+      "origins": [
+        "Greece"
+      ],
+      "imageUrl": "images/food24.jpeg",
+      "tags": [
+        "Salad",
+        "Dinner",
+        "Lunch"
+      ]
     },
     {
-        "id": 4,
-        "name": "Chicken Curry",
-        "price": 10.8,
-        "cooktime": "25-35",
-        "favorite": true,
-        "origins": ["India"],
-      
-        "imageUrl": "images/food17.jpg",
-        "tags": ["Lunch"]
+      "id": "4",
+      "name": "Chicken Curry",
+      "price": 10.8,
+      "cooktime": "25-35",
+      "favorite": true,
+      "origins": [
+        "India"
+      ],
+      "imageUrl": "images/food17.jpg",
+      "tags": [
+        "Lunch"
+      ]
     },
     {
-        "id": 5,
-        "name": "Toasted Sandwiches",
-        "price": 10.0,
-        "cooktime": "15-20",
-        "favorite": false,
-        "origins": ["Turkey"],
-        "imageUrl": "images/food20.jpg",
-        "tags": ["FastFood", "Breakfast"]
+      "id": "5",
+      "name": "Toasted Sandwiches",
+      "price": 10,
+      "cooktime": "15-20",
+      "favorite": false,
+      "origins": [
+        "Turkey"
+      ],
+      "imageUrl": "images/food20.jpg",
+      "tags": [
+        "FastFood",
+        "Breakfast"
+      ]
     },
     {
-        "id": 6,
-        "name": "Pancakes",
-        "price": 9.8,
-        "cooktime": "15-25",
-        "favorite": true,
-        "origins": ["USA"],
-        "imageUrl": "images/food13.jpg",
-        "tags": ["Breakfast"]
+      "id": "6",
+      "name": "Pancakes",
+      "price": 9.8,
+      "cooktime": "15-25",
+      "favorite": true,
+      "origins": [
+        "USA"
+      ],
+      "imageUrl": "images/food13.jpg",
+      "tags": [
+        "Breakfast"
+      ]
     },
     {
-        "id": 7,
-        "name": "Soup",
-        "price": 11.8,
-        "cooktime": "20-30",
-        "favorite": false,
-        "origins": ["Tunisia"],
-        "imageUrl": "images/food26.jpg",
-        "tags": ["Lunch", "Soup"]
+      "id": "7",
+      "name": "Soup",
+      "price": 11.8,
+      "cooktime": "20-30",
+      "favorite": false,
+      "origins": [
+        "Tunisia"
+      ],
+      "imageUrl": "images/food26.jpg",
+      "tags": [
+        "Lunch",
+        "Soup"
+      ]
     },
     {
-        "id": 8,
-        "name": "Pasta",
-        "price": 12.5,
-        "cooktime": "25-35",
-        "favorite": true,
-        "origins": ["Tunisia"],
-        "imageUrl": "images/food8.jpeg",
-        "tags": ["Dinner"]
+      "id": "8",
+      "name": "Pasta",
+      "price": 12.5,
+      "cooktime": "25-35",
+      "favorite": true,
+      "origins": [
+        "Tunisia"
+      ],
+      "imageUrl": "images/food8.jpeg",
+      "tags": [
+        "Dinner"
+      ]
     },
     {
-        "id": 9,
-        "name": "Soup",
-        "price": 12.0,
-        "cooktime": "30-35",
-        "favorite": true,
-        "origins": ["Italy"],
-        "imageUrl": "images/food9.jpg",
-        "tags": ["Dinner", "Soup"]
+      "id": "9",
+      "name": "Soup",
+      "price": 13,
+      "cooktime": "30-35",
+      "favorite": true,
+      "origins": [
+        "Italy"
+      ],
+      "imageUrl": "images/food9.jpg",
+      "tags": [
+        "Dinner",
+        "Soup"
+      ]
     },
     {
-        "id": 10,
-        "name": "Pizza Margarita",
-        "price": 13.0,
-        "cooktime": "25-35",
-        "favorite": false,
-        "origins": ["Italy"],
-        "imageUrl": "images/food11.jpg",
-        "tags": ["FastFood", "Pizza", "Dinner"]
+      "id": "10",
+      "name": "Pizza Margarita",
+      "price": 13,
+      "cooktime": "25-35",
+      "favorite": false,
+      "origins": [
+        "Italy"
+      ],
+      "imageUrl": "images/food11.jpg",
+      "tags": [
+        "FastFood",
+        "Pizza",
+        "Dinner"
+      ]
     },
     {
-        "id": 11,
-        "name": "Salad",
-        "price": 12.0,
-        "cooktime": "15-25",
-        "favorite": false,
-        "origins": ["Greece"],
-        "imageUrl": "images/food15.jpg",
-        "tags": ["Lunch", "Salad", "Dinner"]
+      "id": "11",
+      "name": "Salad",
+      "price": 12,
+      "cooktime": "15-25",
+      "favorite": false,
+      "origins": [
+        "Greece"
+      ],
+      "imageUrl": "images/food15.jpg",
+      "tags": [
+        "Lunch",
+        "Salad",
+        "Dinner"
+      ]
     }
-]
-
-  
+  ]
 }

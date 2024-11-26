@@ -27,7 +27,6 @@
               }
             ],
             "styles": [
-              "src/custom-theme.css",
               "node_modules/bootstrap-icons/font/bootstrap-icons.css",
               "projects/back-office/src/styles.css"
             ],

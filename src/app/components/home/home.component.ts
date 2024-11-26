@@ -6,10 +6,11 @@ import { ActivatedRoute,RouterLink } from '@angular/router';
 import { SearchComponent } from '../../search/search.component';
 import { Tag } from '../../models/Tag';
 import { NgIf } from '@angular/common';
+import { CooktimePipe } from "../../cooktime.pipe";
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [ CurrencyPipe,RouterLink,SearchComponent,NgIf],
+  imports: [CurrencyPipe, RouterLink, SearchComponent, NgIf, CooktimePipe],
 
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
