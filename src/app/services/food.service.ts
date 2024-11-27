@@ -24,11 +24,9 @@ export class FoodService {
       })
     );
   }
-  
-  
 
   public getAll(): Observable<Food[]> {
-    return this.http.get<  Food[] >(API_f);
+    return this.http.get<Food[]>(API_f);
   }
   getAllFoodByTag(tag: string): Observable<Food[]> {
     return this.getAll().pipe(
