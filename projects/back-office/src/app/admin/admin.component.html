@@ -65,38 +65,45 @@
 </div>
 
 <!-- Formulaire d'ajout -->
-<div *ngIf="isAddingFood">
+<div *ngIf="isAddingFood" class="edit-form">
   <h2>Ajouter un Aliment</h2>
   <form (ngSubmit)="addFood()">
-    <div>
-      <label for="name">Nom</label>
-      <input type="text" id="name" [(ngModel)]="name" name="name"  />
-    </div>
+    <label for="name">
+      Nom:
+      <input type="text" id="name" [(ngModel)]="name" name="name" />
+    </label>
+    
+    <label for="price">
+      Prix:
+      <input type="number" id="price" [(ngModel)]="price" name="price" />
+    </label>
 
-    <div>
-      <label for="price">Prix</label>
-      <input type="number" id="price" [(ngModel)]="price" name="price"  />
-    </div>
-
-    <div>
-      <label for="imageUrl">Image URL</label>
+    <label for="imageUrl">
+      Image URL:
       <input type="text" id="imageUrl" [(ngModel)]="imageUrl" name="imageUrl" />
-    </div>
+    </label>
 
-    <div>
-      <label for="origins">Origines</label>
+    <label for="origins">
+      Origines:
       <input type="text" id="origins" [(ngModel)]="origins" name="origins" />
-    </div>
+    </label>
 
-    <div>
-      <label for="cooktime">Temps de cuisson</label>
+    <label for="cooktime">
+      Temps de cuisson:
       <input type="text" id="cooktime" [(ngModel)]="cooktime" name="cooktime" />
-    </div>
+    </label>
 
-    <!-- Champ pour les tags -->
-    <div>
-      <label for="tags">Tags (séparés par des virgules)</label>
+    <label for="tags">
+      Tags (séparés par des virgules):
       <input type="text" id="tags" [(ngModel)]="tags" name="tags" />
-    </div>
+    </label>
 
-    <div>
+    <label>
+      Favori:
+      <input type="checkbox" [(ngModel)]="favorite" name="favorite" />
+    </label>
+
+    <button type="submit">Ajouter</button>
+    <button type="button" (click)="resetForm()">Annuler</button>
+  </form>
+</div>
