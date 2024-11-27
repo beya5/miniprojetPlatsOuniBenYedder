@@ -1,21 +1,21 @@
 <h1 class="text-center mt-4">LOG IN</h1><br>
-<form [formGroup]="subForm" ngSubmit="onSubmit()" ngReset="onResetF()">
+<form [formGroup]="subForm" (ngSubmit)="onSubmit()" (ngReset)="onResetF()">
     <div class="mb-3">
-        <label for="formGroupExampleInput" class="form-label">Identifiant</label>
-        <input type="text" name="admin" formControlName="admin" class="form-control" id="formGroupExampleInput">
+        <label for="admin" class="form-label">Identifiant</label>
+        <input type="text" name="admin" formControlName="admin" class="form-control" id="admin">
     </div>
-    @if(isOblig('admin') && admin?.dirty){
+    @if(isOblig('admin') && admin?.invalid ){
         <div class="alert alert-danger">
             L'identifiant est invalide!
         </div>
     }
     <div class="mb-3">
-        <label for="exampleInputPassword1" class="form-label">Mot de passe</label>
-        <input type="password" name="mdp" formControlName="mdp" class="form-control" id="exampleInputPassword1">
+        <label for="mdp" class="form-label">Mot de passe</label>
+        <input type="password" name="mdp" formControlName="mdp" class="form-control" id="mdp">
     </div>
-    @if(isOblig('mdp') && mdp?.dirty){
+    @if(isOblig('mdp') && mdp?.invalid){
         <div class="alert alert-danger">
-            Le mot de passe est requis!
+            Le mot de passe est incorrect!
         </div>
     }
     <div class="text-center mt-3">

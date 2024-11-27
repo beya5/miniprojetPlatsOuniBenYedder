@@ -1,6 +1,7 @@
 import { Component, inject, OnInit } from '@angular/core';
 import{FormBuilder, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthService } from '../auth.service';
 @Component({
   selector: 'app-login',
   standalone: true,
@@ -12,7 +13,9 @@ export class LoginComponent implements OnInit {
   fb:FormBuilder= inject(FormBuilder);
   subForm!:FormGroup;
   private router:Router=inject(Router);
-  private readonly donnees={admin:'admin',mdp:'123123.'};
+  private readonly authService: AuthService=inject(AuthService);
+
+  // private readonly donnees={admin:'admin',mdp:'123123.'};
 
   ngOnInit(): void {
     this.subForm=this.fb.nonNullable.group(
@@ -39,12 +42,12 @@ export class LoginComponent implements OnInit {
     if (this.subForm.valid) {
       const adm = this.admin?.value;
       const mdp = this.mdp?.value;
-      if (adm === this.donnees.admin && mdp == this.donnees.mdp) {
-        // Rediriger vers la page admin après une connexion réussie
-        this.router.navigate(['/admin']);
-      } else {
-        alert('Identifiant ou mot de passe invalide');
-      }
+      this.authService.login(adm,mdp).subscribe(response  => {
+        if(response){
+          this.router.navigate(['/back-office/admin']);
+      }else
+      alert("Login ou mot de passe incorrect!")
+     })
     }
   }
   

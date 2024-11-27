@@ -5,11 +5,21 @@ import { CurrencyPipe } from '@angular/common';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { SearchComponent } from '../../search/search.component';
 import { Tag } from '../../models/Tag';
+<<<<<<< HEAD
 
 @Component({
   selector: 'app-home',
   standalone: true,
   imports: [CurrencyPipe, RouterLink, SearchComponent],
+=======
+import { NgIf } from '@angular/common';
+import { CooktimePipe } from "../../cooktime.pipe";
+@Component({
+  selector: 'app-home',
+  standalone: true,
+  imports: [CurrencyPipe, RouterLink, SearchComponent, NgIf, CooktimePipe],
+
+>>>>>>> 8426a10fbaa9c2ab15285c74130bbedbdc5fa1bb
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

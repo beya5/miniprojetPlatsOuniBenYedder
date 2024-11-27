@@ -1,0 +1,62 @@
+.owners {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: linear-gradient(135deg, #ffe9e9, #ffd9e9);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    font-family: 'Georgia', serif;
+    color: #333;
+  }
+  
+  h2 {
+    font-weight: bold;
+    color: #ff6b6b;
+    margin-bottom: 1.5em;
+    text-shadow: 2px 2px 5px rgb(244, 144, 144);
+  }
+  
+  .description {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+  }
+  
+  .highlight {
+    color: #ff3d68;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px rgba(255, 61, 104, 0.5);
+  }
+  
+  .keyword {
+    color: #ff7eb3;
+    font-style: italic;
+    font-weight: bold;
+  }
+  
+  .description em {
+    color: #ff6b6b;
+    font-weight: bold;
+    font-style: normal;
+  }
+  
+  .about-owners:hover {
+    transform: scale(0.9);
+    transition: transform 0.3s ease-out;
+  }
+  
+  @media (max-width: 700px) {
+    .owners {
+      padding: 1.1rem;
+    }
+  
+    .title {
+      font-size: 1.5rem;
+    }
+  
+    .description {
+      font-size: 1rem;
+    }
+  }
+  

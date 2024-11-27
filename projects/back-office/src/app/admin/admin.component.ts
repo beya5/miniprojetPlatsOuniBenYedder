@@ -1,14 +1,15 @@
 import { Component, inject, OnInit } from '@angular/core';
+import { FoodService } from '../../../../../src/app/services/food.service';
+import { Food } from '../../../../../src/app/models/Food';
 import { NgIf } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Food } from '../../../../src/app/models/Food';
-import { FoodService } from '../../../../src/app/services/food.service';
+import { CooktimePipe } from "../../../../../src/app/cooktime.pipe";
 
 @Component({
   selector: 'app-admin',
   standalone: true,
-  imports: [NgIf, FormsModule],
+  imports: [NgIf, FormsModule, CooktimePipe],
   templateUrl: './admin.component.html',
   styleUrl: './admin.component.css',
 })

@@ -33,7 +33,7 @@ export class FoodService {
   getAllFoodByTag(tag: string): Observable<Food[]> {
     return this.getAll().pipe(
       map(data => {
-        if (tag === "All") {
+        if (tag == "All") {
           return data; // Si le tag est "All" renvoyer tous les plats
         } else {
           return data.filter(food => food.tags?.includes(tag)); // Filtrer par tag
@@ -42,10 +42,12 @@ export class FoodService {
     );
   }
   
-   public getTags(): Observable<Tag[]> {
-    return this.http.get<Tag[] >(API_t);
-  
+  public getTags(): Observable<Tag[]> {
+    return this.http.get<{ tags: Tag[] }>(API_t).pipe(
+      map(response => response.tags)
+    );
   }
+  
   public updateFood(food: Food): Observable<Food> {
     return this.http.put<Food>(`${API_f}/${(food.id)}`, food);
   }
