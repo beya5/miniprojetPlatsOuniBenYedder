@@ -14,9 +14,20 @@ import { FoodService } from '../../../../src/app/services/food.service';
 })
 export class AdminComponent implements OnInit {
   private readonly foodService: FoodService = inject(FoodService);
-  private readonly router = inject(Router); // Injection du Router
+  private readonly router = inject(Router);
+
   food!: Food[];
   selectedFood!: Food | null;
+  isAddingFood = false;
+
+  // Variables pour stocker les propriétés de l'aliment à ajouter
+  name: string = '';
+  price: number = 0;
+  imageUrl: string = '';
+  origins: string = '';
+  cooktime: string = '';
+  favorite: boolean = false;
+  tags: string = ''; // Pour stocker les tags sous forme de chaîne
 
   ngOnInit(): void {
     this.foodService.getAll().subscribe((data) => (this.food = data));
@@ -33,23 +44,62 @@ export class AdminComponent implements OnInit {
   updateFood(): void {
     if (this.selectedFood) {
       this.foodService.updateFood(this.selectedFood).subscribe(() => {
-        // Met à jour la liste locale après modification
         this.food = this.food.map((item) =>
-          item.id === this.selectedFood?.id ? this.selectedFood! : item
+          item.id ===this.selectedFood?.id ? this.selectedFood! : item
         );
-        this.selectedFood = null; // Réinitialise le formulaire
+        this.selectedFood = null; 
       });
     }
   }
 
-  deleteFood(id: number): void {
+  deleteFood(id: string): void {
     this.foodService.deleteFood(id).subscribe(() => {
-      // Supprime localement après suppression
       this.food = this.food.filter((item) => item.id !== id);
     });
   }
 
+  showAddFoodForm(): void {
+    this.isAddingFood = true; 
+    this.resetForm();
+  }
+
+  addFood(): void {
+    const newId = (Math.floor(Math.random() * (100 - 12 + 1)) + 12).toString();
+
+
+    // Créer une nouvelle instance de Food
+    const newFood = new Food(
+      newId,
+      this.name,
+      this.price,
+      this.tags.split(',').map((tag) => tag.trim()), // Convertir les tags en tableau
+      this.favorite,
+      0, // Valeur par défaut pour stars
+      this.imageUrl,
+      [this.origins], // Origines converties en tableau
+      this.cooktime
+    );
+
+    // Ajouter le nouvel aliment via l'API
+    this.foodService.addFood(newFood).subscribe((addedFood) => {
+      this.food.push(addedFood); // Ajouter à la liste locale
+      this.isAddingFood = false; // Fermer le formulaire
+      this.resetForm(); // Réinitialiser les champs du formulaire
+    });
+  }
+
+  resetForm(): void {
+    // Réinitialiser toutes les variables
+    this.name = '';
+    this.price = 0;
+    this.imageUrl = '';
+    this.origins = '';
+    this.cooktime = '';
+    this.favorite = false;
+    this.tags = '';
+  }
+
   navigateToHome(): void {
-    this.router.navigate(['/home']); // Exemple de navigation vers "home"
+    this.router.navigate(['/home']);
   }
 }

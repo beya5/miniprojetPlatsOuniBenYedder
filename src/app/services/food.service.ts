@@ -12,7 +12,7 @@ const API_t="http://localhost:3001/tags"
 export class FoodService {
   private readonly http:HttpClient=inject(HttpClient);
   constructor() { }
-  getFoodById(id: number): Observable<Food> {
+  getFoodById(id: string): Observable<Food> {
     return this.getAll().pipe(
       map(data => {
         console.log('Données reçues dans getFoodById:', data);
@@ -47,10 +47,15 @@ export class FoodService {
   
   }
   public updateFood(food: Food): Observable<Food> {
-    return this.http.put<Food>(`${API_f}/${food.id}`, food);
+    return this.http.put<Food>(`${API_f}/${(food.id)}`, food);
   }
-  public deleteFood(id: number): Observable<void> {
+  public deleteFood(id: string): Observable<void> {
     return this.http.delete<void>(`${API_f}/${id}`);
   }
+  public addFood(food: Food): Observable<Food> {
+    
+    return this.http.post<Food>(API_f, food);
+  }
+  
 
 }

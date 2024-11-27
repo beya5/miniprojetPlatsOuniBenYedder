@@ -1,12 +1,14 @@
-export class Food{
-    id!:number;
-    name!:string;
-    price!:number;
-    tags?:string[];
-    favorite!:boolean;
-    stars!:number;
-    imageUrl!:string;
-    origins!:string[];
-    cooktime!:string;
-
-}
+export class Food {
+    constructor(
+      public id: string,
+      public name: string,
+      public price: number,
+      public tags: string[] = [], 
+      public favorite: boolean,
+      public stars: number,
+      public imageUrl: string,
+      public origins: string[],
+      public cooktime: string
+    ) {}
+  }
+  

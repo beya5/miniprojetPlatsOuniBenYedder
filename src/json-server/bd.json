@@ -153,7 +153,7 @@
     {
       "id": "11",
       "name": "Salad",
-      "price": 12,
+      "price": 17,
       "cooktime": "15-25",
       "favorite": false,
       "origins": [

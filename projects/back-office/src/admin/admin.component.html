@@ -1,34 +1,112 @@
+<!-- Liste des aliments -->
 @for (item of food; track $index) 
 {
     <div>
-    <img [src]="item.imageUrl" alt="{{ item.name }}" />
-    <h3>{{ item.name }}</h3>
-    <p>Price: {{ item.price }}$</p>
-    <p>Cook Time: {{ item.cooktime }}</p>
-    <button (click)="editFood(item)">Edit</button>
-    <button (click)="deleteFood(item.id)">Delete</button>
-  </div>
-} 
-  <!-- Formulaire pour modifier un plat -->
-  <div *ngIf="selectedFood" class="edit-form">
-    <h3>Edit {{ selectedFood.name }}</h3>
-    <form (ngSubmit)="updateFood()">
-      <label>
-        Name:
-        <input [(ngModel)]="selectedFood.name" name="name"  />
-      </label>
-      <label>
-        Price:
-        <input type="number" [(ngModel)]="selectedFood.price" name="price"/>
-      </label>
-      <label>
-        Cook Time:
-        <input [(ngModel)]="selectedFood.cooktime" name="cooktime"  />
-      </label>
-      <button type="submit">Save</button>
-      <button type="button" (click)="cancelEdit()">Cancel</button>
-    </form>
-  </div>
-  <button (click)="navigateToHome()">Retour à l'accueil</button>
+      <img [src]="item.imageUrl" alt="{{ item.name }}" />
+      <h3>{{ item.name }}</h3>
+      <p>Price: {{ item.price }}$</p>
+      <p>Cook Time: {{ item.cooktime }}</p>
+      <button (click)="editFood(item)">Edit</button>
+      <button (click)="deleteFood(item.id)">Delete</button>
+    </div>
+}
+<!-- Formulaire pour modifier un plat -->
+<div *ngIf="selectedFood" class="edit-form">
+  <h2>Modifier {{ selectedFood.name }}</h2>
+  <form (ngSubmit)="updateFood()">
+    <div>
+      <label for="edit-name">Nom</label>
+      <input type="text" id="edit-name" [(ngModel)]="selectedFood.name" name="edit-name" />
+    </div>
 
-  
+    <div>
+      <label for="edit-price">Prix</label>
+      <input type="number" id="edit-price" [(ngModel)]="selectedFood.price" name="edit-price"  />
+    </div>
+
+    <div>
+      <label for="edit-imageUrl">Image URL</label>
+      <input type="text" id="edit-imageUrl" [(ngModel)]="selectedFood.imageUrl" name="edit-imageUrl"  />
+    </div>
+
+    <div>
+      <label for="edit-origins">Origines</label>
+      <input type="text" id="edit-origins" [(ngModel)]="selectedFood.origins" name="edit-origins"  />
+    </div>
+
+    <div>
+      <label for="edit-cooktime">Temps de cuisson</label>
+      <input type="text" id="edit-cooktime" [(ngModel)]="selectedFood.cooktime" name="edit-cooktime" />
+    </div>
+
+    <div>
+      <label for="edit-tags">Tags</label>
+      <input type="text" id="edit-tags" [(ngModel)]="selectedFood.tags" name="edit-tags"  />
+    </div>
+
+    <div>
+      <label>
+        Favori
+        <input type="checkbox" [(ngModel)]="selectedFood.favorite" name="edit-favorite" />
+      </label>
+    </div>
+
+    <button type="submit">Sauvegarder</button>
+    <button type="button" (click)="cancelEdit()">Annuler</button>
+  </form>
+</div>
+
+
+
+<!-- Bouton pour ajouter un aliment -->
+<div>
+  <button (click)="showAddFoodForm()">Ajouter un Aliment</button>
+</div>
+
+<!-- Formulaire d'ajout -->
+<div *ngIf="isAddingFood">
+  <h2>Ajouter un Aliment</h2>
+  <form (ngSubmit)="addFood()">
+    <div>
+      <label for="name">Nom</label>
+      <input type="text" id="name" [(ngModel)]="name" name="name"  />
+    </div>
+
+    <div>
+      <label for="price">Prix</label>
+      <input type="number" id="price" [(ngModel)]="price" name="price"  />
+    </div>
+
+    <div>
+      <label for="imageUrl">Image URL</label>
+      <input type="text" id="imageUrl" [(ngModel)]="imageUrl" name="imageUrl" />
+    </div>
+
+    <div>
+      <label for="origins">Origines</label>
+      <input type="text" id="origins" [(ngModel)]="origins" name="origins" />
+    </div>
+
+    <div>
+      <label for="cooktime">Temps de cuisson</label>
+      <input type="text" id="cooktime" [(ngModel)]="cooktime" name="cooktime" />
+    </div>
+
+    <!-- Champ pour les tags -->
+    <div>
+      <label for="tags">Tags (séparés par des virgules)</label>
+      <input type="text" id="tags" [(ngModel)]="tags" name="tags" />
+    </div>
+
+    <div>
+      <label>
+        Favori
+        <input type="checkbox" [(ngModel)]="favorite" name="favorite" />
+      </label>
+    </div>
+
+    <button type="submit">Ajouter</button>
+    <button type="button" (click)="resetForm()">Annuler</button>
+  </form>
+</div>
+

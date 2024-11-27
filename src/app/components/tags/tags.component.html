@@ -6,7 +6,7 @@
         }
     </div>
 }
-@if (foodPageTags) {
+@else if (foodPageTags) {
     <div >
         @for (tagname of foodPageTags; track $index) {
             <a  [routerLink]="['/tag', tagname]">{{tagname}} </a>

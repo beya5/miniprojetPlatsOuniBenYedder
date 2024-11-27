@@ -1,6 +1,9 @@
 
 <app-search></app-search>
-<app-tags *ngIf="tags" [foodPageTags]="tags"></app-tags>
+@if (tags) {
+    <app-tags [tags]="tags"></app-tags> 
+}
+
 
 
 <ul>

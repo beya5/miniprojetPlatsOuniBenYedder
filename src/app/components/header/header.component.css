@@ -23,20 +23,5 @@ a.logo {
     display: flex;
     justify-content: space-between;
 }
-nav ul {
-    list-style-type: none;
-    margin: 0;
-    
-}
-
-nav ul li a {
-    padding: 1em;
-    display: inline-block;
-    font-size: 1.2rem; 
-    font-weight: bold;
-    color: rgb(255, 134, 4);
-    text-decoration: none;
-}
-
 
 
