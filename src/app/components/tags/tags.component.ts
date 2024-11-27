@@ -16,7 +16,7 @@ export class TagsComponent implements OnInit{
 
   private readonly foodService:FoodService=inject(FoodService);
   ngOnInit(): void {
-    if(!this.foodPageTags)
+    if(this.foodPageTags)
       this.foodService.getTags().subscribe(data => {
         console.log('Tags récupérés:',data);
         this.tags = data;
